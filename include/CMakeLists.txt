@@ -1,0 +1,35 @@
+#
+# Copyright 2020-2021 CNRS-UM LIRMM,CNRS-AIST JRL
+#
+
+set(HEADERS_INCLUDE_DIR $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>$<INSTALL_INTERFACE:include>)
+
+set(HEADERS
+    ${HEADERS_INCLUDE_DIR}/${PROJECT_NAME}/assert
+    ${HEADERS_INCLUDE_DIR}/${PROJECT_NAME}/block_matrix_defs.hpp
+    ${HEADERS_INCLUDE_DIR}/${PROJECT_NAME}/CMTM.hpp
+    ${HEADERS_INCLUDE_DIR}/${PROJECT_NAME}/Core
+    ${HEADERS_INCLUDE_DIR}/${PROJECT_NAME}/defs.hpp
+    ${HEADERS_INCLUDE_DIR}/${PROJECT_NAME}/format.hpp
+    ${HEADERS_INCLUDE_DIR}/${PROJECT_NAME}/forward_declare.hpp
+    ${HEADERS_INCLUDE_DIR}/${PROJECT_NAME}/lie_algebra.hpp
+    ${HEADERS_INCLUDE_DIR}/${PROJECT_NAME}/map.hpp
+    ${HEADERS_INCLUDE_DIR}/${PROJECT_NAME}/math_utils.hpp
+    ${HEADERS_INCLUDE_DIR}/${PROJECT_NAME}/operators.hpp
+    ${HEADERS_INCLUDE_DIR}/${PROJECT_NAME}/spatial_algebra.hpp
+    ${HEADERS_INCLUDE_DIR}/${PROJECT_NAME}/spatial_vector.hpp
+    ${HEADERS_INCLUDE_DIR}/${PROJECT_NAME}/Storage.hpp
+    ${HEADERS_INCLUDE_DIR}/${PROJECT_NAME}/typechecks.hpp
+)
+
+add_library(${PROJECT_NAME} INTERFACE)
+target_sources(${PROJECT_NAME} INTERFACE ${HEADERS})
+target_include_directories(${PROJECT_NAME} INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}> $<INSTALL_INTERFACE:include>)
+target_compile_features(${PROJECT_NAME} INTERFACE cxx_auto_type cxx_constexpr)
+target_link_libraries(${PROJECT_NAME} INTERFACE Eigen3::Eigen)
+
+install(
+    TARGETS ${PROJECT_NAME}
+    EXPORT "${TARGETS_EXPORT_NAME}"
+)
+install(DIRECTORY ${PROJECT_NAME} DESTINATION ${INCLUDE_INSTALL_DIR})

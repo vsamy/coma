@@ -1,0 +1,118 @@
+#pragma once
+
+// Include STL libraries
+#include <array>
+#include <ostream>
+#include <unordered_map>
+
+// Include external libraries
+#include <Eigen/Core>
+#include <Eigen/Geometry>
+
+// Include CMTM in order
+#include "forward_declare.hpp"
+
+#include "typechecks.hpp"
+
+#include "defs.hpp"
+
+#include "assert.hpp"
+
+#include "math_utils.hpp"
+
+#include "format.hpp"
+
+#include "Storage.hpp"
+
+#include "spatial_vector.hpp"
+
+#include "block_matrix_defs.hpp"
+
+#include "spatial_algebra.hpp"
+
+#include "lie_algebra.hpp"
+
+#include "map.hpp"
+
+#include "CMTM.hpp"
+
+#include "operators.hpp"
+
+// Declare basic types
+namespace coma {
+// Spatial Vector
+using MotionVectorf = MotionVector<float>;
+using MotionVectord = MotionVector<double>;
+using ForceVectorf = ForceVector<float>;
+using ForceVectord = ForceVector<double>;
+
+template <int Order>
+using MotionVectorNf = MotionVectorX<float, Order>;
+template <int Order>
+using MotionVectorNd = MotionVectorX<double, Order>;
+template <int Order>
+using ForceVectorNf = ForceVectorX<float, Order>;
+template <int Order>
+using ForceVectorNd = ForceVectorX<double, Order>;
+
+using MotionVectorXf = MotionVectorX<float, Dynamic>;
+using MotionVectorXd = MotionVectorX<double, Dynamic>;
+using ForceVectorXf = ForceVectorX<float, Dynamic>;
+using ForceVectorXd = ForceVectorX<double, Dynamic>;
+
+// Transform
+using Transformf = Transform<float>;
+using Transformd = Transform<double>;
+
+// Cross
+using Crossf = Cross<float>;
+using Crossd = Cross<double>;
+
+// CrossN
+template <int Order>
+using CrossNf = CrossN<float, Order>;
+template <int Order>
+using CrossNd = CrossN<double, Order>;
+
+using CrossXf = CrossN<float, Dynamic>;
+using CrossXd = CrossN<double, Dynamic>;
+
+// CMTM
+template <int Order>
+using CMTM4Nf = CMTM<float, 4, Order>;
+template <int Order>
+using CMTM6Nf = CMTM<float, 6, Order>;
+template <int Order>
+using CMTM4Nd = CMTM<double, 4, Order>;
+template <int Order>
+using CMTM6Nd = CMTM<double, 6, Order>;
+
+using CMTM4Xf = CMTM<float, 4, Dynamic>;
+using CMTM6Xf = CMTM<float, 6, Dynamic>;
+using CMTM4Xd = CMTM<double, 4, Dynamic>;
+using CMTM6Xd = CMTM<double, 6, Dynamic>;
+
+// Spatial Inertia
+using SpatialInertiaf = SpatialInertia<float>;
+using SpatialInertiad = SpatialInertia<double>;
+
+// Motion Subspace
+using MotionSubspacef = MotionSubspace<float>;
+using MotionSubspaced = MotionSubspace<double>;
+
+// Diagonal spatial inertia
+template <int Order>
+using DiInertiaNf = DiInertia<float, Order>;
+using DiInertiaXf = DiInertia<float, Dynamic>;
+template <int Order>
+using DiInertiaNd = DiInertia<double, Order>;
+using DiInertiaXd = DiInertia<double, Dynamic>;
+
+// Diagonal motion subspace
+template <int Order>
+using DiMotionSubspaceNf = DiMotionSubspace<float, Order>;
+using DiMotionSubspaceXf = DiMotionSubspace<float, Dynamic>;
+template <int Order>
+using DiMotionSubspaceNd = DiMotionSubspace<double, Order>;
+using DiMotionSubspaceXd = DiMotionSubspace<double, Dynamic>;
+}

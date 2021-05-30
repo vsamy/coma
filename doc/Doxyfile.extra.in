@@ -1,0 +1,11 @@
+INPUT                  = @PROJECT_SOURCE_DIR@/include/coma @PROJECT_SOURCE_DIR@/include/coma/Core @PROJECT_SOURCE_DIR@/README.md
+FILE_PATTERNS          = *.hpp
+EXTENSION_MAPPING      = no_extension=C++
+USE_MDFILE_AS_MAINPAGE = @PROJECT_SOURCE_DIR@/README.md
+EXCLUDE_SYMBOLS        = internal
+EXTRACT_PRIVATE        = YES
+EXTRA_PACKAGES         = amsmath,amssymb,bm,accents,commands
+ALIASES               += mathline{1}="\f$\1\f$"
+ALIASES               += inv="^{\text{-}1}"
+ALIASES               += op{1}="\left[\1\mkern-2mu\times\mkern-2mu\right]"
+ALIASES               += opd{1}="\left[\1\mkern-2mu\bar{\times}\mkern-2mu\right]"
