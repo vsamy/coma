@@ -30,7 +30,7 @@ For benchmarks:
 ### Building
 
 ```sh
-git clone --recursive https://github.com/jrl-umi3218/coma
+git clone --recursive https://github.com/vsamy/coma
 cd coma
 mkdir build
 cd build
