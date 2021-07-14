@@ -6,6 +6,7 @@ along the needed lie algebra tools.
 ## Table of contents
  1. [Installation](#Installation)
  2. [Performance](#Performance)
+ 3. [Reference](#Reference)
 
 ## Installation
 
@@ -58,3 +59,7 @@ The next graph is a multiplication between two CMTM that also consider the const
 Static corresponds to `CMTM<double, 6, order>` and dynamic to `CMTM<double, 6, coma::Dynamic>`.
 
 ![CMTM multiplication cd](data/cmtm_operator_mul_cd.png "Multiplication of two CMTM")
+
+## Reference
+
+Related paper can be found [here](https://roboticsconference.org/program/papers/032/)
