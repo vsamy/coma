@@ -63,3 +63,13 @@ Static corresponds to `CMTM<double, 6, order>` and dynamic to `CMTM<double, 6, c
 ## Reference
 
 Related paper can be found [here](https://roboticsconference.org/program/papers/032/)
+
+Citation
+```bibtex
+@inproceedings{samy2021generalized,
+  title={Generalized Comprehensive Motion Theory for High-Order Differential Dynamics},
+  author={Samy, Vincent and Ayusawa, Ko and Yoshida, Eiichi},
+  journal={Robotics: Science and Systems XVII},
+  year={2021}
+}
+```
